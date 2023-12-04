@@ -6,9 +6,11 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  use 'christoomey/vim-tmux-navigator'
   
-  use 'folke/tokyonight.nvim'
-  
+  use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' } 
+
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.3',
   -- or                            , branch = '0.1.x',
@@ -44,6 +46,27 @@ return require('packer').startup(function(use)
 use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+
+use {
+    "nvim-neorg/neorg",
+    config = function()
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+            },
+        }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
 }
 
 end)

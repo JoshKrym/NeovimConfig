@@ -10,7 +10,7 @@ vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "C:/Users/gman1/AppData/Local/nvim/undodir"
+vim.opt.undodir = "/home/josh/.config/nvim/undodir"
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
