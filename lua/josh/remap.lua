@@ -20,6 +20,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("i", "<C-s>", "<cmd>:w<cr>")
 
+vim.keymap.set("n", "gr", "gd[{V%::s/<C-R>///gc<left><left><left>")
+vim.keymap.set("n", "Gr", "gD:%s/<C-R>///gc<left><left><left>")
+
 vim.api.nvim_create_user_command(
     'WG',
     function()
