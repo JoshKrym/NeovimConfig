@@ -27,5 +27,4 @@ vim.opt.colorcolumn = "80"
 
 vim.g.jukit_shell_cmd="ipython"
 
-
- 
+vim.opt.clipboard="unnamedplus"
